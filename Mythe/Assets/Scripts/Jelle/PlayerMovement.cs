@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody playerRB;
     Vector3 jumpForce = new Vector3(0,450,0);
     [SerializeField]
-    float movementSpeed;
+    public float movementSpeed;
     void Start()
     {
         playerRB = GetComponent<Rigidbody>();
