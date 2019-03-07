@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Mythe/Assets/Scripts/Dexter.meta
 guid: f88a61b4862a816498211cc71a575f56
+=======
+guid: e193c3c5b5cd6804883e859d0c088330
+>>>>>>> 01ed2d00f50854d3b35f4a7eee2fa7a737ce09e2:Mythe/Assets/Art.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
