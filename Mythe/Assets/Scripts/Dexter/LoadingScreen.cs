@@ -9,12 +9,21 @@ public class LoadingScreen : MonoBehaviour
     public Slider slider;
     public Text progressText;
 
+    /// <summary>
+    /// Loads the level async.
+    /// </summary>
+    /// <param name="sceneIndex">Scene index.</param>
     public void LoadLevel(int sceneIndex)
     {
         StartCoroutine(LoadAsynchronously(sceneIndex));
       
     }
 
+    /// <summary>
+    /// Loads the asynchronously.
+    /// </summary>
+    /// <returns>The asynchronously.</returns>
+    /// <param name="sceneIndex">Scene index.</param>
     IEnumerator LoadAsynchronously (int sceneIndex)
     {
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneIndex);
