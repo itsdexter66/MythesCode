@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    bool isGrounded = false;
+    bool automaticWalk = true;
     Rigidbody playerRB;
     Vector3 jumpForce = new Vector3(0,450,0);
     [SerializeField]
@@ -20,34 +20,28 @@ public class PlayerMovement : MonoBehaviour
         {
             Jump();
         }
-
-        if (Input.GetKey(KeyCode.D))
+        //Automatic/Manual walking.
+        if (automaticWalk == false)
+        {
+            if (Input.GetKey(KeyCode.D))
+            {
+                transform.Translate(movementSpeed * Time.deltaTime, 0, 0);
+            }
+            if (Input.GetKey(KeyCode.A))
+            {
+                transform.Translate(-movementSpeed * Time.deltaTime, 0, 0);
+            }
+        }
+        else
         {
             transform.Translate(movementSpeed * Time.deltaTime, 0, 0);
         }
-        if (Input.GetKey(KeyCode.A))
-        {
-            transform.Translate(-movementSpeed * Time.deltaTime, 0, 0);
-        }
-
     }
 
     bool CheckIfGrounded()
     {
-        int layerMask = 1 << 8;
-        layerMask = ~layerMask;
-        RaycastHit hit;
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out hit, 0.5f, layerMask))
-        {
-            isGrounded = true;
-            return isGrounded;
-        }
-        else
-        {
-            isGrounded = false;
-            return isGrounded;
-        }
-        
+        //Will return True if this object exists above another object.
+        return Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out RaycastHit hit, 0.7f);                
     }
 
     private void Jump()
