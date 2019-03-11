@@ -34,4 +34,10 @@ public class Buttons : MonoBehaviour
     {
         SceneManager.LoadScene("OptionScene");
     }
+
+    public void Mainmenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
 }
