@@ -1,9 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class TeleportBetweenPoints : MonoBehaviour { 
-    // x,y,z position where you will be teleported to on collision
+public class TeleportToPoint : MonoBehaviour { 
+    // x,y,z position where you will teleport to on collision
     public Vector3 TeleportPoint;
 
     private void OnCollisionEnter(Collision other)
@@ -13,6 +11,7 @@ public class TeleportBetweenPoints : MonoBehaviour {
         {
             // transform the position of the object that touched this object
             other.transform.position = TeleportPoint;
+            Destroy(this.gameObject,0.5f);
         }
     }
 }
