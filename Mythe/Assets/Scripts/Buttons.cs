@@ -6,12 +6,13 @@ using UnityEngine.UI;
 
 public class Buttons : MonoBehaviour
 {
+    public GameObject PauseUI;
+    private Pause pause;
 
-   
 
-    void Start()
+    void Awake()
     {
-    
+            
     }
 
     
@@ -20,9 +21,10 @@ public class Buttons : MonoBehaviour
         
     }
 
-    void OnClick()
+    public void resume()
     {
-     
+        PauseUI.SetActive(false);
+        Time.timeScale = 1;
     }
 
     public void startscene()
