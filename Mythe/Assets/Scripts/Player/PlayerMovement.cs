@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     bool isGrounded = false;
     Rigidbody playerRB;
-    Vector3 jumpForce = new Vector3(0, 450, 0);
+    Vector3 jumpForce = new Vector3(0, 900, 0);
     [SerializeField]
     public float movementSpeed;
     void Start()
