@@ -10,15 +10,15 @@ public class MonsterBehavior : MonoBehaviour
     float detectRange;
     private Vector3 dir;
     Transform target;
-    PlayerBehavior scriptReference;
+    PlayerBehavior playerReference;
     int leapCount;
     bool leapOnce = true;
     // Start is called before the first frame update
     void Start()
     {
-      detectRange = transform.localScale.x + 2.5f;
+      detectRange = transform.localScale.x + 3.5f;
       target = GameObject.FindObjectOfType<PlayerMovement>().GetComponent<Transform>();
-      scriptReference = GameObject.FindObjectOfType<PlayerBehavior>();
+        playerReference = GameObject.Find("Player").GetComponent<PlayerBehavior>();
     }
 
     // Update is called once per frame
@@ -41,6 +41,8 @@ public class MonsterBehavior : MonoBehaviour
         DetectPlayer();
     }
 
+    
+
     void DetectPlayer()
     {
         //Looks for the target's presence and (in the case Player) executes Death().
@@ -49,7 +51,7 @@ public class MonsterBehavior : MonoBehaviour
         Debug.DrawRay(transform.position, dir, Color.red);
         if (Physics.Raycast(transform.position, dir, detectRange, targetLayer))
         {
-            scriptReference.Death();
+            playerReference.MonsterHit();   
         }
     }
 
