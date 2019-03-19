@@ -20,6 +20,6 @@ public class CameraScript : MonoBehaviour
 
     private void LockOnTarget()
     {
-        transform.position = new Vector3(targetT.position.x, 3, -17);
+        transform.position = new Vector3(targetT.position.x, targetT.position.y + 4, -17);
     }
 }
