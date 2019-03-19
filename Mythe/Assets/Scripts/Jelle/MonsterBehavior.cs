@@ -5,7 +5,7 @@ using UnityEngine;
 public class MonsterBehavior : MonoBehaviour
 {
     [SerializeField]
-    float movementSpeed;
+    float movementSpeed = 5;
     public LayerMask targetLayer;
     float detectRange;
     private Vector3 dir;
@@ -32,7 +32,7 @@ public class MonsterBehavior : MonoBehaviour
             }
             else
             {
-                Leap();
+                Leap(18);
                 leapOnce = false;
             }
         }
@@ -55,9 +55,11 @@ public class MonsterBehavior : MonoBehaviour
         }
     }
 
-    void Leap()
+    void Leap(float leapDistance)
     {
-        transform.Translate(10, 0, 0);
+        transform.Translate(leapDistance, 0, 0);
     }
+
+    
 
 }

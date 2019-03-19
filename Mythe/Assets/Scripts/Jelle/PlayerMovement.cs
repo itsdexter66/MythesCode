@@ -7,8 +7,11 @@ public class PlayerMovement : MonoBehaviour
     bool automaticWalk = true;
     Rigidbody playerRB;
     Vector3 jumpForce = new Vector3(0,450,0);
-    [SerializeField]
-    public float movementSpeed;
+    public float movementSpeed = 6;
+    float standartMoveSpeed = 6;
+    float impairedMoveSpeed = 2;
+    public bool impairedMovement = false;
+    float counter,wearOffTIme = 1.5f;
     void Start()
     {
         playerRB = GetComponent<Rigidbody>();
@@ -35,6 +38,19 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             transform.Translate(movementSpeed * Time.deltaTime, 0, 0);
+        }
+
+        //Impaired Movement
+        if (impairedMovement)
+        {
+            movementSpeed = impairedMoveSpeed;
+            counter += Time.deltaTime;
+            if (counter > wearOffTIme)
+            {
+                movementSpeed = standartMoveSpeed;
+                counter = 0;
+                impairedMovement = false;
+            }
         }
     }
 
