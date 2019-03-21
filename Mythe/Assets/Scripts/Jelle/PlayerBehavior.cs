@@ -22,7 +22,7 @@ public class PlayerBehavior : MonoBehaviour
 
     public void MonsterHit()
     {
-        
+        PlayerDeath();
     }
 
 

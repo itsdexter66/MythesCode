@@ -8,10 +8,13 @@ public class PlatformDetectPlayer : MonoBehaviour
     public Transform target;
     private Vector3 dir;
     public LayerMask targetLayer;
+    private PlayerMovement playerMovement;
+    readonly string playerName = "Player";
     // Start is called before the first frame update
     void Start()
     {
         target = GameObject.FindObjectOfType<PlayerMovement>().GetComponent<Transform>();
+        playerMovement = GameObject.Find(playerName).GetComponent<PlayerMovement>();
     }
 
     // Update is called once per frame
@@ -36,14 +39,15 @@ public class PlatformDetectPlayer : MonoBehaviour
         return Physics.Raycast(transform.position, dir, out hitInfo, rayDistance, targetLayer);
     }
     
-    void SetBackPlayer(Transform obj = null, float force = 4)
+    void SetBackPlayer(Transform obj = null, float force = 1)
     {
-        Vector3 translation = new Vector3(-1,0,0) * force;
+        Vector3 translation = new Vector3(0,1,0) * force;
         switch (obj)
         {
             case null:
                 hitInfo.transform.Translate(translation, Space.World);
-            break;
+                playerMovement.impairedMovement = true;
+                break;
             default:
                 obj.Translate(translation, Space.World);
             break;
