@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    bool automaticWalk = false;
+    bool automaticWalk = true;
     Rigidbody playerRB;
     Vector3 jumpForce = new Vector3(0,700,0);
     [SerializeField]
