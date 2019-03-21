@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    bool automaticWalk = true;
+    bool automaticWalk = false;
     Rigidbody playerRB;
     Vector3 jumpForce = new Vector3(0,450,0);
     public float movementSpeed = 6;
