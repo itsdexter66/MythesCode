@@ -5,20 +5,20 @@ using UnityEngine;
 public class MonsterBehavior : MonoBehaviour
 {
     [SerializeField]
-    float movementSpeed;
+    float movementSpeed = 5;
     public LayerMask targetLayer;
     float detectRange;
     private Vector3 dir;
     Transform target;
-    PlayerBehavior scriptReference;
+    PlayerBehavior playerReference;
     int leapCount;
     bool leapOnce = true;
     // Start is called before the first frame update
     void Start()
     {
-      detectRange = transform.localScale.x + 2.5f;
+      detectRange = transform.localScale.x + 3.5f;
       target = GameObject.FindObjectOfType<PlayerMovement>().GetComponent<Transform>();
-      scriptReference = GameObject.FindObjectOfType<PlayerBehavior>();
+        playerReference = GameObject.Find("Player").GetComponent<PlayerBehavior>();
     }
 
     // Update is called once per frame
@@ -32,7 +32,7 @@ public class MonsterBehavior : MonoBehaviour
             }
             else
             {
-                Leap();
+                Leap(18);
                 leapOnce = false;
             }
         }
@@ -40,6 +40,8 @@ public class MonsterBehavior : MonoBehaviour
         transform.Translate(movementSpeed * Time.deltaTime, 0, 0);
         DetectPlayer();
     }
+
+    
 
     void DetectPlayer()
     {
@@ -49,13 +51,15 @@ public class MonsterBehavior : MonoBehaviour
         Debug.DrawRay(transform.position, dir, Color.red);
         if (Physics.Raycast(transform.position, dir, detectRange, targetLayer))
         {
-            scriptReference.Death();
+            playerReference.MonsterHit();   
         }
     }
 
-    void Leap()
+    void Leap(float leapDistance)
     {
-        transform.Translate(10, 0, 0);
+        transform.Translate(leapDistance, 0, 0);
     }
+
+    
 
 }
