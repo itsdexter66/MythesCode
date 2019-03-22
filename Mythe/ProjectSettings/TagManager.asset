@@ -7,6 +7,7 @@ TagManager:
   - StartButton
   - QuitButton
   - OptionsButton
+  - Enemy
   layers:
   - Default
   - TransparentFX
