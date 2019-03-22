@@ -11,7 +11,7 @@ public class CameraScript : MonoBehaviour
     void Start()
     {
         targetT = GameObject.Find(targetName).GetComponent<Transform>();
-        moveToPlayerSpeed = moveToPlayerSpeed / 10;
+        moveToPlayerSpeed = moveToPlayerSpeed;
     }
 
     // Update is called once per frame
@@ -24,6 +24,7 @@ public class CameraScript : MonoBehaviour
     {
         //float dist = Vector3.Distance(transform.position, targetT.position);
         //float t = 0.5f;
-        transform.position = new Vector3(Mathf.Lerp(transform.position.x, targetT.position.x, 0.1f * moveToPlayerSpeed), Mathf.Lerp(transform.position.y, targetT.position.y, 0.1f * moveToPlayerSpeed) + 0.2f, -17);
+        //transform.position = new Vector3(Mathf.Lerp(transform.position.x, targetT.position.x, 0.1f * moveToPlayerSpeed), Mathf.Lerp(transform.position.y, targetT.position.y, 0.1f * moveToPlayerSpeed) + 0.2f, -17);
+        transform.position = new Vector3(targetT.position.x, targetT.position.y, -17);
     }
 }
