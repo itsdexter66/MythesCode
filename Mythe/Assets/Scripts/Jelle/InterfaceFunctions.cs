@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class InterfaceFunctions : MonoBehaviour
 {
-    string gameScene = "JelleScene1";
+    //string gameScene = "JelleScene1";
+    private string gameScene = "SemScene";
     public void Restart()
     {
         Application.LoadLevel(gameScene);
