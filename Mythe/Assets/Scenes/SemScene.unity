@@ -473,12 +473,12 @@ PrefabInstance:
     - target: {fileID: 4878423345242077291, guid: 1c8795e2803de7d439605b5c4ebd49dc,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -40.3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4878423345242077291, guid: 1c8795e2803de7d439605b5c4ebd49dc,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 14.9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4878423345242077291, guid: 1c8795e2803de7d439605b5c4ebd49dc,
         type: 3}
@@ -854,7 +854,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78162a5205ad82e47ab731e72ba968ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 6
+  movementSpeed: 5
   targetLayer:
     serializedVersion: 2
     m_Bits: 512
@@ -866,7 +866,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 190283943}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -438.9, y: 28.9, z: 0}
+  m_LocalPosition: {x: -472.5, y: 43.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 114385298}
@@ -1390,6 +1390,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: 30.169445
       objectReference: {fileID: 0}
+    - target: {fileID: 3208743639662688604, guid: 8224416ada296f848b72e6cdc4b82900,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 3208743639662688603, guid: 8224416ada296f848b72e6cdc4b82900,
         type: 3}
       propertyPath: target
@@ -1783,6 +1788,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3208743639662688604, guid: 8224416ada296f848b72e6cdc4b82900,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 3208743639662688603, guid: 8224416ada296f848b72e6cdc4b82900,
         type: 3}
       propertyPath: target
@@ -2125,7 +2135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4fa4e07777da0c49b20495895f86778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 6
+  movementSpeed: 5.5
   impairedMovement: 0
 --- !u!1 &428544773
 GameObject:
@@ -2289,6 +2299,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 15.681399
+      objectReference: {fileID: 0}
+    - target: {fileID: 3208743639662688604, guid: 8224416ada296f848b72e6cdc4b82900,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 3208743639662688603, guid: 8224416ada296f848b72e6cdc4b82900,
         type: 3}
@@ -3894,6 +3909,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: 15.6814
       objectReference: {fileID: 0}
+    - target: {fileID: 3208743639662688604, guid: 8224416ada296f848b72e6cdc4b82900,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 3208743639662688603, guid: 8224416ada296f848b72e6cdc4b82900,
         type: 3}
       propertyPath: target
@@ -4883,6 +4903,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: 15.681399
       objectReference: {fileID: 0}
+    - target: {fileID: 3208743639662688604, guid: 8224416ada296f848b72e6cdc4b82900,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 3208743639662688603, guid: 8224416ada296f848b72e6cdc4b82900,
         type: 3}
       propertyPath: target
@@ -5058,6 +5083,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 30.169449
+      objectReference: {fileID: 0}
+    - target: {fileID: 3208743639662688604, guid: 8224416ada296f848b72e6cdc4b82900,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 3208743639662688603, guid: 8224416ada296f848b72e6cdc4b82900,
         type: 3}
@@ -6008,6 +6038,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 15.681399
+      objectReference: {fileID: 0}
+    - target: {fileID: 3208743639662688604, guid: 8224416ada296f848b72e6cdc4b82900,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 3208743639662688603, guid: 8224416ada296f848b72e6cdc4b82900,
         type: 3}
