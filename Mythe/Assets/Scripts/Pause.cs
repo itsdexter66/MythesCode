@@ -1,18 +1,51 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using System.Collections;
+using UnityEngine.UI;
 
-public class PauseMenu : MonoBehaviour
+public class Pause : MonoBehaviour
 {
-    // Start is called before the first frame update
+
+    public GameObject PauseUI;
+
+    public bool paused = false;
+
     void Start()
     {
-        
+
+        PauseUI.SetActive(false);
+
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            togglepause();
+
+        }
+
+        if (paused)
+        {
+
+            PauseUI.SetActive(true);
+            Time.timeScale = 0;
+        }
+
+        if (!paused)
+        {
+
+            PauseUI.SetActive(false);
+            Time.timeScale = 1;
+
+        }
+
+    }
+
+    public void togglepause()
+    {
+        paused = !paused;
+
     }
 }
+
