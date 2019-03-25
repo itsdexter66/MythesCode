@@ -12,6 +12,11 @@ public class PlayerMovement : MonoBehaviour
     float impairedMoveSpeed = 2;
     public bool impairedMovement = false;
     float counter,wearOffTIme = 1.5f;
+
+    public GameObject rightButton;
+    public GameObject leftButton;
+    public GameObject jumpButton;
+
     void Start()
     {
         playerRB = GetComponent<Rigidbody>();
@@ -26,14 +31,17 @@ public class PlayerMovement : MonoBehaviour
         //Automatic/Manual walking.
         if (automaticWalk == false)
         {
-            if (Input.GetKey(KeyCode.D))
-            {
-                transform.Translate(movementSpeed * Time.deltaTime, 0, 0);
-            }
-            if (Input.GetKey(KeyCode.A))
-            {
-                transform.Translate(-movementSpeed * Time.deltaTime, 0, 0);
-            }
+            rightButton.SetActive(true);
+            leftButton.SetActive(true);
+
+            //if (Input.GetKey(KeyCode.D))
+            //{
+            //    transform.Translate(movementSpeed * Time.deltaTime, 0, 0);
+            //}
+            //if (Input.GetKey(KeyCode.A))
+            //{
+            //    transform.Translate(-movementSpeed * Time.deltaTime, 0, 0);
+            //}
         }
         else
         {
@@ -60,7 +68,17 @@ public class PlayerMovement : MonoBehaviour
         return Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out RaycastHit hit, 0.7f);                
     }
 
-    private void Jump()
+    public void moveRight()
+    {
+        transform.Translate(movementSpeed * Time.deltaTime, 0, 0);
+    }
+
+    public void moveLeft()
+    {
+        transform.Translate(-movementSpeed * Time.deltaTime, 0, 0);
+    }
+
+    public void Jump()
     {
         if (CheckIfGrounded() == true)
         {
