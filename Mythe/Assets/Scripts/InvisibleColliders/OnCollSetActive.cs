@@ -2,10 +2,12 @@
 
 public class OnCollSetActive : MonoBehaviour
 {
+    // objects that need to be set active or false
     [SerializeField]
     private GameObject objectsSetActive,
                        objectsSetFalse;
 
+    // booleans to tell if the objects needs to be set active or false
     [SerializeField]
     private bool activityObjectTrue,
                  activityObjectFalse;
