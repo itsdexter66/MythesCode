@@ -17,11 +17,17 @@ public class PlayerMovement : MonoBehaviour
     public GameObject leftButton;
     public GameObject jumpButton;
 
+    /// <summary>
+    /// Start this instance.
+    /// </summary>
     void Start()
     {
         playerRB = GetComponent<Rigidbody>();
     }
 
+    /// <summary>
+    /// Update this instance.
+    /// </summary>
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
@@ -48,6 +54,7 @@ public class PlayerMovement : MonoBehaviour
             transform.Translate(movementSpeed * Time.deltaTime, 0, 0);
         }
 
+
         //Impaired Movement
         if (impairedMovement)
         {
@@ -62,22 +69,34 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Checks if grounded.
+    /// </summary>
+    /// <returns><c>true</c>, if if grounded was checked, <c>false</c> otherwise.</returns>
     bool CheckIfGrounded()
     {
         //Will return True if this object exists above another object.
         return Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out RaycastHit hit, 0.7f);                
     }
-
+    /// <summary>
+    /// Moves the right.
+    /// </summary>
     public void moveRight()
     {
         transform.Translate(movementSpeed * Time.deltaTime, 0, 0);
     }
 
+    /// <summary>
+    /// Moves the left.
+    /// </summary>
     public void moveLeft()
     {
         transform.Translate(-movementSpeed * Time.deltaTime, 0, 0);
     }
 
+    /// <summary>
+    /// Jump this instance.
+    /// </summary>
     public void Jump()
     {
         if (CheckIfGrounded() == true)
@@ -86,6 +105,10 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Ons the collision enter.
+    /// </summary>
+    /// <param name="other">Other.</param>
     void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.tag == "Cave")
