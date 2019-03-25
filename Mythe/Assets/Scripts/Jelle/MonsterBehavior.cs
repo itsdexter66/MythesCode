@@ -5,12 +5,13 @@ using UnityEngine;
 public class MonsterBehavior : MonoBehaviour
 {
     [SerializeField]
-    float movementSpeed = 5;
+    float movementSpeed = 6;
     public LayerMask targetLayer;
     float detectRange;
     private Vector3 dir;
     Transform target;
     PlayerBehavior playerReference;
+    CameraScript camScriptRef;
     int leapCount;
     bool leapOnce = true;
     // Start is called before the first frame update
@@ -19,6 +20,7 @@ public class MonsterBehavior : MonoBehaviour
       detectRange = transform.localScale.x + 3.5f;
       target = GameObject.FindObjectOfType<PlayerMovement>().GetComponent<Transform>();
         playerReference = GameObject.Find("Player").GetComponent<PlayerBehavior>();
+        camScriptRef = GameObject.Find("Main Camera").GetComponent<CameraScript>();
     }
 
     // Update is called once per frame
@@ -32,7 +34,8 @@ public class MonsterBehavior : MonoBehaviour
             }
             else
             {
-                Leap(18);
+                StartCoroutine(Leap(18, 0));
+                camScriptRef.followPlayer = false;
                 leapOnce = false;
             }
         }
@@ -47,7 +50,6 @@ public class MonsterBehavior : MonoBehaviour
     {
         //Looks for the target's presence and (in the case Player) executes Death().
         dir = target.position - transform.position;
-        Debug.Log(target.position);
         Debug.DrawRay(transform.position, dir, Color.red);
         if (Physics.Raycast(transform.position, dir, detectRange, targetLayer))
         {
@@ -55,9 +57,17 @@ public class MonsterBehavior : MonoBehaviour
         }
     }
 
-    void Leap(float leapDistance)
+    IEnumerator Leap(float leapDistance, float t)
     {
-        transform.Translate(leapDistance, 0, 0);
+        float travel = transform.position.x + leapDistance;
+        while(t < 1)
+        {
+            Debug.Log("Mew");
+            t += 0.03f;
+            transform.position = new Vector3(Mathf.Lerp(transform.position.x, travel, t), transform.position.y, transform.position.z);
+            yield return new WaitForFixedUpdate();
+        }
+        
     }
 
     
