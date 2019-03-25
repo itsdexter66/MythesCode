@@ -7,6 +7,7 @@ TagManager:
   - StartButton
   - QuitButton
   - OptionsButton
+  - Cave
   layers:
   - Default
   - TransparentFX

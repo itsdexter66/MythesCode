@@ -9,11 +9,14 @@ EditorBuildSettings:
     path: 
     guid: 00000000000000000000000000000000
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 2f38cf25f7fa0cb42bc0193c9d1f7edf
+  - enabled: 1
     path: Assets/Scenes/MainScene.unity
     guid: f37a6268e3fd5b542be3e36ae0bfee5f
   - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
-    guid: 2f38cf25f7fa0cb42bc0193c9d1f7edf
+    path: Assets/Scenes/SemScene.unity
+    guid: 87a24df9ad7898943950cfc410e35ce8
   - enabled: 1
     path: Assets/Scenes/DeathScene.unity
     guid: 16a7bac318634da428d0bb2d018c0a80
