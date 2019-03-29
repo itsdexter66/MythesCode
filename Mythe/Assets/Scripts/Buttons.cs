@@ -42,4 +42,9 @@ public class Buttons : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
     }
 
+    public void restart()
+    {
+        Application.LoadLevel(Application.loadedLevel);
+    }
+
 }
