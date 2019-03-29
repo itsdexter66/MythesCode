@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     bool automaticWalk = true;
     Rigidbody playerRB;
-    Vector3 jumpForce = new Vector3(0,700,0);
+    Vector3 jumpForce = new Vector3(0,450,0);
     public float movementSpeed = 6;
     float standartMoveSpeed = 6;
     float impairedMoveSpeed = 2;

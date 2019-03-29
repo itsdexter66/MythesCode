@@ -23,13 +23,14 @@ public class PlatformDetectPlayer : MonoBehaviour
         if (DetectPlayer())
         {
             SetBackPlayer();
+            Debug.Log("Detected");
         }
     }
 
     bool DetectPlayer()
     {
         float rayDistance = transform.localScale.x / 2 + 0.2f;
-        //Clamp the Raycast to only be active on the left side.
+        //Clamp the Raycast to only be active on the left side and downside.
         dir = target.position - transform.position;
         dir.y = Mathf.Clamp(dir.y, -0.3f, 0);
         if (dir.x > -1)
@@ -39,7 +40,7 @@ public class PlatformDetectPlayer : MonoBehaviour
         return Physics.Raycast(transform.position, dir, out hitInfo, rayDistance, targetLayer);
     }
     
-    void SetBackPlayer(Transform obj = null, float force = 1)
+    void SetBackPlayer(Transform obj = null, float force = 6)
     {
         Vector3 translation = new Vector3(0,1,0) * force;
         switch (obj)

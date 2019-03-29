@@ -273,7 +273,7 @@ PrefabInstance:
     - target: {fileID: 3208743639662688604, guid: 8224416ada296f848b72e6cdc4b82900,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.97
+      value: 6.8599997
       objectReference: {fileID: 0}
     - target: {fileID: 3208743639662688604, guid: 8224416ada296f848b72e6cdc4b82900,
         type: 3}
@@ -324,6 +324,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3208743639662688604, guid: 8224416ada296f848b72e6cdc4b82900,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3208743639662688603, guid: 8224416ada296f848b72e6cdc4b82900,
         type: 3}
@@ -592,7 +597,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1097601481}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 3, z: -17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -611,7 +616,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cac347ccfb346d46b4ed2852225ca1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  followPlayer: 0
+  followPlayer: 1
+  moveToPlayerSpeed: 5
 --- !u!1 &1129103954
 GameObject:
   m_ObjectHideFlags: 0
@@ -641,7 +647,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78162a5205ad82e47ab731e72ba968ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 5.9
+  movementSpeed: 6
   targetLayer:
     serializedVersion: 2
     m_Bits: 512
@@ -653,7 +659,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1129103954}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -27.36, y: 4.16, z: 0}
+  m_LocalPosition: {x: -27, y: 4.16, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 723477986}
@@ -766,7 +772,7 @@ PrefabInstance:
     - target: {fileID: 3208743639662688604, guid: 8224416ada296f848b72e6cdc4b82900,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.35
+      value: 3.2399998
       objectReference: {fileID: 0}
     - target: {fileID: 3208743639662688604, guid: 8224416ada296f848b72e6cdc4b82900,
         type: 3}
@@ -817,6 +823,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3208743639662688604, guid: 8224416ada296f848b72e6cdc4b82900,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3208743639662688603, guid: 8224416ada296f848b72e6cdc4b82900,
         type: 3}
@@ -1146,7 +1157,7 @@ PrefabInstance:
     - target: {fileID: 3208743639662688604, guid: 8224416ada296f848b72e6cdc4b82900,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.55
+      value: 4.44
       objectReference: {fileID: 0}
     - target: {fileID: 3208743639662688604, guid: 8224416ada296f848b72e6cdc4b82900,
         type: 3}
@@ -1198,6 +1209,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 3208743639662688604, guid: 8224416ada296f848b72e6cdc4b82900,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 3208743639662688603, guid: 8224416ada296f848b72e6cdc4b82900,
         type: 3}
       propertyPath: m_Enabled
@@ -1225,7 +1241,7 @@ PrefabInstance:
     - target: {fileID: 3208743639662688604, guid: 8224416ada296f848b72e6cdc4b82900,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.61
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 3208743639662688604, guid: 8224416ada296f848b72e6cdc4b82900,
         type: 3}
@@ -1276,6 +1292,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3208743639662688604, guid: 8224416ada296f848b72e6cdc4b82900,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3208743639662688603, guid: 8224416ada296f848b72e6cdc4b82900,
         type: 3}
