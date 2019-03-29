@@ -5,8 +5,8 @@ using UnityEngine;
 public class ObjectMovingBetweenPositions : MonoBehaviour
 {
     [SerializeField]
-    private float travelDurationDown = 1f,
-                  travelDurationUp = 2f,
+    private float travelDurationOne = 1f,
+                  travelDurationTwo = 2f,
                   wait = 1f,
                   wait2 = 4f;
 
@@ -27,9 +27,9 @@ public class ObjectMovingBetweenPositions : MonoBehaviour
         {
             //Travel from A to B
             float speed = 0f;
-            while (speed < travelDurationDown)
+            while (speed < travelDurationOne)
             {
-                transform.position = Vector3.Lerp(pointA, pointB, speed / travelDurationDown);
+                transform.position = Vector3.Lerp(pointA, pointB, speed / travelDurationOne);
                 speed += Time.deltaTime;
                 yield return null;
             }
@@ -42,9 +42,9 @@ public class ObjectMovingBetweenPositions : MonoBehaviour
 
             //Travel back from B to A
             float speed2 = 0f;
-            while (speed2 < travelDurationUp)
+            while (speed2 < travelDurationTwo)
             {
-                transform.position = Vector3.Lerp(pointB, pointA, speed2 / travelDurationUp);
+                transform.position = Vector3.Lerp(pointB, pointA, speed2 / travelDurationTwo);
                 speed2 += Time.deltaTime;
                 yield return null;
             }
