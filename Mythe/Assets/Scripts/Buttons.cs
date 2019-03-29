@@ -8,6 +8,8 @@ public class Buttons : MonoBehaviour
 {
     public GameObject PauseUI;
     private Pause pause;
+    public string scene;
+ 
 
 
     void Awake()
@@ -45,6 +47,16 @@ public class Buttons : MonoBehaviour
     public void restart()
     {
         Application.LoadLevel(Application.loadedLevel);
+    }
+
+    public void levelSelect()
+    {
+        SceneManager.LoadScene("LevelSelect");
+    }
+
+    public void SelectScene()
+    {
+        SceneManager.LoadScene(scene);
     }
 
 }

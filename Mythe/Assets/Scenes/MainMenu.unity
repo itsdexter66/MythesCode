@@ -945,7 +945,7 @@ GameObject:
   - component: {fileID: 1200461300}
   - component: {fileID: 1200461303}
   m_Layer: 5
-  m_Name: start
+  m_Name: levelSelect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1074,6 +1074,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PauseUI: {fileID: 0}
+  scene: 
 --- !u!1 &1505003353
 GameObject:
   m_ObjectHideFlags: 0
@@ -1217,6 +1218,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PauseUI: {fileID: 0}
+  scene: 
 --- !u!1 &1615449915
 GameObject:
   m_ObjectHideFlags: 0
@@ -1560,7 +1562,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: start
+  m_Text: level select
 --- !u!222 &2050700774
 CanvasRenderer:
   m_ObjectHideFlags: 0
