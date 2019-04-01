@@ -9,11 +9,7 @@ public class CameraScript : MonoBehaviour
     public bool followPlayer = true;
     readonly string playerName = "Player";
     readonly string targetName = "ChasingMonster";
-<<<<<<< HEAD
     public float moveToPlayerSpeed = 5;
-=======
-    float moveToPlayerSpeed = 5;
->>>>>>> 0b3035449e41390c785fc4345680cfd892dcfe2f
     // Start is called before the first frame update
     void Start()
     {
@@ -42,10 +38,6 @@ public class CameraScript : MonoBehaviour
 
     private void LockOnTarget()
     {
-<<<<<<< HEAD
         transform.position = new Vector3(targetT.position.x + 15, transform.position.y, -17);
-=======
-        transform.position = new Vector3(Mathf.Lerp(transform.position.x, targetT.position.x + 15, 0.1f * moveToPlayerSpeed), Mathf.Lerp(transform.position.y, targetT.position.y, 0.1f * moveToPlayerSpeed) + 0.2f, -17);
->>>>>>> 0b3035449e41390c785fc4345680cfd892dcfe2f
     }
 }
