@@ -28,7 +28,7 @@ public class PlatformDetectPlayer : MonoBehaviour
 
     bool DetectPlayer()
     {
-        float rayDistance = transform.localScale.x / 2 + 0.2f;
+        float rayDistance = -2;
         //Clamp the Raycast to only be active on the left side.
         dir = target.position - transform.position;
         dir.y = Mathf.Clamp(dir.y, -0.3f, 0);

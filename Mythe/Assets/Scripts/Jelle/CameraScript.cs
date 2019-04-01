@@ -7,6 +7,7 @@ public class CameraScript : MonoBehaviour
     Transform targetT;
     readonly string targetName = "Player";
     public float moveToPlayerSpeed = 5;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,10 +21,21 @@ public class CameraScript : MonoBehaviour
         LockOnTarget();
     }
 
-    private void LockOnTarget()
+    public void LockOnTarget()
     {
        // float dist = Vector3.Distance(transform.position, targetT.position);
         //transform.position = new Vector3(Mathf.Lerp(transform.position.x, targetT.position.x, 0.1f * moveToPlayerSpeed), Mathf.Lerp(transform.position.y, targetT.position.y, 0.1f * moveToPlayerSpeed) + 0.2f, -17);
-        transform.position = new Vector3(targetT.position.x, targetT.position.y + 4, -17);
+       transform.position = new Vector3(targetT.position.x, -4.5f, -9);
+    }
+    void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.tag == "Cave")
+        {
+            transform.position = new Vector3(targetT.position.x, targetT.position.y + 3, -9);
+        }
+        else
+        {
+            LockOnTarget();
+        }
     }
 }
