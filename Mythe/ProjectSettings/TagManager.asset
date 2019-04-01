@@ -8,18 +8,23 @@ TagManager:
   - QuitButton
   - OptionsButton
   - Cave
+<<<<<<< HEAD
   - Destroyables
+=======
+  - Enemy
+>>>>>>> 0b3035449e41390c785fc4345680cfd892dcfe2f
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  -
   - Water
   - UI
-  - 
-  - 
+  -
+  -
   - PostProcessing
   - Player
+<<<<<<< HEAD
   - Destroyables
   - 
   - 
@@ -42,6 +47,30 @@ TagManager:
   - 
   - 
   - 
+=======
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+>>>>>>> 0b3035449e41390c785fc4345680cfd892dcfe2f
   m_SortingLayers:
   - name: Default
     uniqueID: 0

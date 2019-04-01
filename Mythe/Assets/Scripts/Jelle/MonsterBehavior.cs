@@ -60,6 +60,10 @@ public class MonsterBehavior : MonoBehaviour
     {
         //Looks for the target's presence and (in the case Player) executes Death().
         dir = target.position - transform.position;
+<<<<<<< HEAD
+=======
+        Debug.DrawRay(transform.position, dir, Color.red);
+>>>>>>> 0b3035449e41390c785fc4345680cfd892dcfe2f
         if (Physics.Raycast(transform.position, dir, detectRange, targetLayer))
         {
             playerReference.MonsterHit();   
