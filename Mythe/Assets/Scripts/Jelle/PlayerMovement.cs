@@ -2,15 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class PlayerMovement : MonoBehaviour
 {
     bool automaticWalk = true;
     Rigidbody playerRB;
     Vector3 jumpForce = new Vector3(0,700,0);
-    public float movementSpeed = 6;
+    public float movementSpeed = 6, direction;
     float standartMoveSpeed = 6;
     float impairedMoveSpeed = 2;
-    public bool impairedMovement = false;
+    public bool impairedMovement = false, pressing;
     float counter,wearOffTIme = 1.5f;
 
     public GameObject rightButton;
@@ -69,6 +70,13 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    private void Move()
+    {
+        transform.Translate(direction * movementSpeed * Time.deltaTime, 0, 0);
+    }
+
+
+
     /// <summary>
     /// Checks if grounded.
     /// </summary>
@@ -76,22 +84,7 @@ public class PlayerMovement : MonoBehaviour
     bool CheckIfGrounded()
     {
         //Will return True if this object exists above another object.
-        return Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out RaycastHit hit, 0.7f);                
-    }
-    /// <summary>
-    /// Moves the right.
-    /// </summary>
-    public void moveRight()
-    {
-        transform.Translate(movementSpeed * Time.deltaTime, 0, 0);
-    }
-
-    /// <summary>
-    /// Moves the left.
-    /// </summary>
-    public void moveLeft()
-    {
-        transform.Translate(-movementSpeed * Time.deltaTime, 0, 0);
+        return Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out RaycastHit hit, 0.7f);
     }
 
     /// <summary>
