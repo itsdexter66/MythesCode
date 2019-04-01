@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class DestroyOtherOnCollision : MonoBehaviour
+public class SetActiveOtherOnCollision : MonoBehaviour
 {
     private void OnCollisionEnter(Collision other)
     {

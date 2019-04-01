@@ -24,6 +24,14 @@ EditorBuildSettings:
     path: Assets/Scenes/DeathScene.unity
     guid: 16a7bac318634da428d0bb2d018c0a80
   - enabled: 1
+<<<<<<< HEAD
     path: Assets/Scenes/DexterScene1.unity
     guid: cdd362bc970364249ab6876858c45fc7
+=======
+    path: Assets/Scenes/Level1.unity
+    guid: 68bcd759cc4bb40409921987202cef13
+  - enabled: 1
+    path: Assets/Scenes/TutorialLevel.unity
+    guid: c498d7aa31a55c446a28279c722054b9
+>>>>>>> bca94be25a80f2ca5351147277877fde40fb80bb
   m_configObjects: {}
