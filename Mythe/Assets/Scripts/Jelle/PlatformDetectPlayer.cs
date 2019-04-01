@@ -23,7 +23,6 @@ public class PlatformDetectPlayer : MonoBehaviour
         if (DetectPlayer())
         {
             SetBackPlayer();
-            Debug.Log("Detected");
         }
     }
 
@@ -40,7 +39,7 @@ public class PlatformDetectPlayer : MonoBehaviour
         return Physics.Raycast(transform.position, dir, out hitInfo, rayDistance, targetLayer);
     }
     
-    void SetBackPlayer(Transform obj = null, float force = 6)
+    void SetBackPlayer(Transform obj = null, float force = 1)
     {
         Vector3 translation = new Vector3(0,1,0) * force;
         switch (obj)
