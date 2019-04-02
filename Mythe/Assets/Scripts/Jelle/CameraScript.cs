@@ -33,9 +33,5 @@ public class CameraScript : MonoBehaviour
         {
             transform.position = new Vector3(targetT.position.x, targetT.position.y + 3, -9);
         }
-        else
-        {
-            LockOnTarget();
-        }
     }
 }
