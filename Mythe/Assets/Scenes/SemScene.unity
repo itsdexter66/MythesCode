@@ -2180,7 +2180,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 383597688}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -444, y: 42.5, z: 0}
+  m_LocalPosition: {x: -95.6, y: 41.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -7646,6 +7646,7 @@ GameObject:
   - component: {fileID: 1750006065}
   - component: {fileID: 1750006064}
   - component: {fileID: 1750006063}
+  - component: {fileID: 1750006066}
   m_Layer: 5
   m_Name: RightButton
   m_TagString: Untagged
@@ -7712,18 +7713,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1750006064}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 383597695}
-        m_MethodName: GetInput
-        m_Mode: 4
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 1
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1750006064
@@ -7763,6 +7753,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1750006061}
   m_CullTransparentMesh: 0
+--- !u!114 &1750006066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1750006061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ad33e01547444d92a1f97464c91546b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1762072632
 GameObject:
   m_ObjectHideFlags: 0

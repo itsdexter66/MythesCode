@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     bool automaticWalk = true;
     Rigidbody playerRB;
     Vector3 jumpForce = new Vector3(0,700,0);
-    public float movementSpeed = 6, direction;
+    public float movementSpeed = 6;
     float standartMoveSpeed = 6;
     float impairedMoveSpeed = 2;
     public bool impairedMovement = false, pressing;
@@ -41,14 +41,14 @@ public class PlayerMovement : MonoBehaviour
             rightButton.SetActive(true);
             leftButton.SetActive(true);
 
-            //if (Input.GetKey(KeyCode.D))
-            //{
-            //    transform.Translate(movementSpeed * Time.deltaTime, 0, 0);
-            //}
-            //if (Input.GetKey(KeyCode.A))
-            //{
-            //    transform.Translate(-movementSpeed * Time.deltaTime, 0, 0);
-            //}
+            if (Input.GetKey(KeyCode.D))
+            {
+                transform.Translate(movementSpeed * Time.deltaTime, 0, 0);
+            }
+            if (Input.GetKey(KeyCode.A))
+            {
+                transform.Translate(-movementSpeed * Time.deltaTime, 0, 0);
+            }
         }
         else
         {
@@ -70,9 +70,10 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void Move()
+    public void Move()
     {
-        transform.Translate(direction * movementSpeed * Time.deltaTime, 0, 0);
+        transform.Translate(movementSpeed * Time.deltaTime, 0, 0);
+        Debug.Log("moving");
     }
 
 
