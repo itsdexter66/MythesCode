@@ -13,9 +13,9 @@ public class LoadingScreen : MonoBehaviour
     /// Loads the level async.
     /// </summary>
     /// <param name="sceneIndex">Scene index.</param>
-    public void LoadLevel(int sceneIndex)
+    public void LoadLevel(string sceneName)
     {
-        StartCoroutine(LoadAsynchronously(sceneIndex));
+        StartCoroutine(LoadAsynchronously(sceneName));
       
     }
 
@@ -24,9 +24,9 @@ public class LoadingScreen : MonoBehaviour
     /// </summary>
     /// <returns>The asynchronously.</returns>
     /// <param name="sceneIndex">Scene index.</param>
-    IEnumerator LoadAsynchronously (int sceneIndex)
+    IEnumerator LoadAsynchronously (string sceneName)
     {
-        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneIndex);
+        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneName);
 
         loadingScreen.SetActive(true);
 

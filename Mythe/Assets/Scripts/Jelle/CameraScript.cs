@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class CameraScript : MonoBehaviour
 {
+    Transform playerT;
     Transform targetT;
-    readonly string targetName = "Player";
-    public float moveToPlayerSpeed = 5;
-
+    public bool followPlayer = true;
+    readonly string playerName = "Player";
+    readonly string targetName = "ChasingMonster";
+    float moveToPlayerSpeed = 5;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +20,19 @@ public class CameraScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        LockOnTarget();
+        if (followPlayer)
+        {
+            LockOnPlayer();
+        }
+        else
+        {
+            LockOnTarget();
+        }
+    }
+
+    private void LockOnPlayer()
+    {
+        transform.position = new Vector3(Mathf.Lerp(transform.position.x, playerT.position.x, 0.1f * moveToPlayerSpeed), Mathf.Lerp(transform.position.y, playerT.position.y, 0.1f * moveToPlayerSpeed) + 0.2f, -17);
     }
 
     public void LockOnTarget()
