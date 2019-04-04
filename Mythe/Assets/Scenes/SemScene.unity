@@ -1983,10 +1983,53 @@ MeshFilter:
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!4 &383597693 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 6328595930320156810, guid: 35027234bd854fd4686f843517899a93,
-    type: 3}
-  m_PrefabInstance: {fileID: 6328595930684196087}
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 383597688}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -95.6, y: 41.2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &383597694
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 383597688}
+  serializedVersion: 2
+  m_Mass: 1.5
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 120
+  m_CollisionDetection: 0
+--- !u!114 &383597695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 383597688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4fa4e07777da0c49b20495895f86778, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  movementSpeed: 5.5
+  direction: 0
+  impairedMovement: 0
+  pressing: 0
+  rightButton: {fileID: 1750006061}
+  leftButton: {fileID: 1714501867}
+  jumpButton: {fileID: 1868289622}
 --- !u!1 &428544773
 GameObject:
   m_ObjectHideFlags: 0
@@ -3320,7 +3363,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cac347ccfb346d46b4ed2852225ca1b, type: 3}
   m_Name:
   m_EditorClassIdentifier:
-  moveToPlayerSpeed: 1.47
+  followPlayer: 1
 --- !u!4 &829944335 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9118319130383793009, guid: c44231285aa7efd4fa635da21bee0080,
@@ -7136,13 +7179,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 383597695}
-        m_MethodName: moveLeft
-        m_Mode: 1
+        m_MethodName: GetInput
+        m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 0
+          m_FloatArgument: -1
           m_StringArgument:
           m_BoolArgument: 0
         m_CallState: 2
@@ -7219,6 +7262,7 @@ GameObject:
   - component: {fileID: 1750006065}
   - component: {fileID: 1750006064}
   - component: {fileID: 1750006063}
+  - component: {fileID: 1750006066}
   m_Layer: 5
   m_Name: RightButton
   m_TagString: Untagged
@@ -7336,6 +7380,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1750006061}
   m_CullTransparentMesh: 0
+--- !u!114 &1750006066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1750006061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ad33e01547444d92a1f97464c91546b, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
 --- !u!1 &1762072632
 GameObject:
   m_ObjectHideFlags: 0
