@@ -66,16 +66,6 @@ public class PlayerMovement : MonoBehaviour
             }
         }
     }
-
-// //     /// <summary>
-//     /// Checks if grounded.
-//     /// </summary>
-//     /// <returns><c>true</c>, if if grounded was checked, <c>false</c> otherwise.</returns>
-    bool CheckIfGrounded()
-    {
-        //Will return True if this object exists above another object.
-        return Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out RaycastHit hit, 0.7f);
-    }
 //     /// <summary>
 //     /// Moves the right.
 //     /// </summary>

@@ -62,7 +62,6 @@ public class MonsterBehavior : MonoBehaviour
         float travel = transform.position.x + leapDistance;
         while(t < 1)
         {
-            Debug.Log("Mew");
             t += 0.03f;
             transform.position = new Vector3(Mathf.Lerp(transform.position.x, travel, t), transform.position.y, transform.position.z);
             yield return new WaitForFixedUpdate();

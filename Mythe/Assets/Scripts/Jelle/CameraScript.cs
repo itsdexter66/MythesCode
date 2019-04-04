@@ -39,6 +39,6 @@ public class CameraScript : MonoBehaviour
     {
        // float dist = Vector3.Distance(transform.position, targetT.position);
         //transform.position = new Vector3(Mathf.Lerp(transform.position.x, targetT.position.x, 0.1f * moveToPlayerSpeed), Mathf.Lerp(transform.position.y, targetT.position.y, 0.1f * moveToPlayerSpeed) + 0.2f, -17);
-       transform.position = new Vector3(targetT.position.x, -4.5f, -9);
+       transform.position = new Vector3(targetT.position.x + 10, -4.5f, -9);
     }
 }
