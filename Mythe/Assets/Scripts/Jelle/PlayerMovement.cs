@@ -12,6 +12,8 @@ public class PlayerMovement : MonoBehaviour
     float impairedMoveSpeed = 2;
     public bool impairedMovement = false;
     float counter,wearOffTIme = 1.5f;
+    private bool isGrounded;
+
     void Start()
     {
         playerRB = GetComponent<Rigidbody>();
@@ -65,6 +67,7 @@ public class PlayerMovement : MonoBehaviour
         if (CheckIfGrounded() == true)
         {
             playerRB.AddForce(jumpForce);
+            isGrounded = true;
         }
     }
 
