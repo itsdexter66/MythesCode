@@ -10,6 +10,9 @@ public class PlatformDetectPlayer : MonoBehaviour
     public LayerMask targetLayer;
     private PlayerMovement playerMovement;
     readonly string playerName = "Player";
+    [SerializeField]
+    private int localScaleXDivider;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,7 +32,8 @@ public class PlatformDetectPlayer : MonoBehaviour
 
     bool DetectPlayer()
     {
-        float rayDistance = transform.localScale.x / 2 + 0.2f;
+        // get the local scale x / int or float that's two times the scale of the x value
+        float rayDistance = transform.localScale.x / localScaleXDivider + 0.2f;
         //Clamp the Raycast to only be active on the left side and downside.
         dir = target.position - transform.position;
         dir.y = Mathf.Clamp(dir.y, -0.3f, 0);
@@ -42,7 +46,7 @@ public class PlatformDetectPlayer : MonoBehaviour
 
     void SetBackPlayer(Transform obj = null, float force = 6)
     {
-        Vector3 translation = new Vector3(0,1,0) * force;
+        Vector3 translation = new Vector3(0,0.3f,0) * force;
         switch (obj)
         {
             case null:
