@@ -14,13 +14,21 @@ public class MonsterBehavior : MonoBehaviour
     CameraScript camScriptRef;
     int leapCount;
     bool leapOnce = true;
+    public float destroyableDistance = 2;
     // Start is called before the first frame update
+
+    List<GameObject> destroyables = new List<GameObject>();
     void Start()
     {
       detectRange = transform.localScale.x + 3.5f;
       target = GameObject.FindObjectOfType<PlayerMovement>().GetComponent<Transform>();
         playerReference = GameObject.Find("Player").GetComponent<PlayerBehavior>();
         camScriptRef = GameObject.Find("Main Camera").GetComponent<CameraScript>();
+        GameObject[] a = GameObject.FindGameObjectsWithTag("Destroyables");
+        foreach (GameObject destroyable in a)
+        {
+            destroyables.Add(destroyable);
+        }
     }
 
     // Update is called once per frame
@@ -68,7 +76,22 @@ public class MonsterBehavior : MonoBehaviour
         }
         
     }
+    void CheckDestroyablesInRange()
+    {
+        for (int i = 0; i < destroyables.Count; i++)
+        {
+            float distanceX = destroyables[i].transform.position.x - transform.position.x;
+            if (distanceX < destroyableDistance + 15)
+            {
+                DestroyObject(destroyables[i]);
+            }
+        }
+    }
 
-    
-
+    void DestroyObject(GameObject ob)
+    {
+        Destroy(ob, 0.2f);
+        destroyables.Remove(ob);
+        //anim.Play("Destroy");
+    }
 }

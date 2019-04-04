@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+
     public bool automaticWalk = true;
     Rigidbody playerRB;
     Vector3 jumpForce = new Vector3(0,350,0);
@@ -115,3 +116,4 @@ public void Move()
         }
     }
 }
+

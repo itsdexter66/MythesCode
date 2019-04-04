@@ -1,0 +1,207 @@
+fileFormatVersion: 2
+guid: baede0a996e1fa64097d9849c804b488
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Belly
+    100002: Belly 1
+    100004: BL_Down_Knee
+    100006: BL_Hip
+    100008: BL_Toe
+    100010: BL_Up_Knee
+    100012: BR_Down_Knee
+    100014: BR_Hip
+    100016: BR_Toe
+    100018: BR_Up_Knee
+    100020: Chest
+    100022: Chest 1
+    100024: ikHandle1
+    100026: ikHandle2
+    100028: ikHandle3
+    100030: ikHandle4
+    100032: ikHandle5
+    100034: ikHandle6
+    100036: ikHandle7
+    100038: joint8
+    100040: joint9
+    100042: L_Arm
+    100044: L_Back_leg
+    100046: L_down_knee
+    100048: L_Elbow
+    100050: L_Front_leg
+    100052: L_Hand
+    100054: L_Hand 1
+    100056: L_heup
+    100058: L_Shoulder
+    100060: L_Toe
+    100062: L_up_knee
+    100064: L_Vinger
+    100066: Neck
+    100068: Pelvis
+    100070: Pelvis1
+    100072: R_Arm
+    100074: R_Back_Leg
+    100076: R_down_knee
+    100078: R_Elbow
+    100080: R_Front_Leg
+    100082: R_Hand
+    100084: R_Hand 1
+    100086: R_heup
+    100088: R_Shoulder
+    100090: R_Toe
+    100092: R_up_knee
+    100094: R_Vinger
+    100096: Spine_1
+    100098: sprinkhaan_body131314
+    100100: Tale
+    100102: Tale_1
+    100104: Tale_2
+    100106: Tale_tip
+    100108: //RootNode
+    400000: Belly
+    400002: Belly 1
+    400004: BL_Down_Knee
+    400006: BL_Hip
+    400008: BL_Toe
+    400010: BL_Up_Knee
+    400012: BR_Down_Knee
+    400014: BR_Hip
+    400016: BR_Toe
+    400018: BR_Up_Knee
+    400020: Chest
+    400022: Chest 1
+    400024: ikHandle1
+    400026: ikHandle2
+    400028: ikHandle3
+    400030: ikHandle4
+    400032: ikHandle5
+    400034: ikHandle6
+    400036: ikHandle7
+    400038: joint8
+    400040: joint9
+    400042: L_Arm
+    400044: L_Back_leg
+    400046: L_down_knee
+    400048: L_Elbow
+    400050: L_Front_leg
+    400052: L_Hand
+    400054: L_Hand 1
+    400056: L_heup
+    400058: L_Shoulder
+    400060: L_Toe
+    400062: L_up_knee
+    400064: L_Vinger
+    400066: Neck
+    400068: Pelvis
+    400070: Pelvis1
+    400072: R_Arm
+    400074: R_Back_Leg
+    400076: R_down_knee
+    400078: R_Elbow
+    400080: R_Front_Leg
+    400082: R_Hand
+    400084: R_Hand 1
+    400086: R_heup
+    400088: R_Shoulder
+    400090: R_Toe
+    400092: R_up_knee
+    400094: R_Vinger
+    400096: Spine_1
+    400098: sprinkhaan_body131314
+    400100: Tale
+    400102: Tale_1
+    400104: Tale_2
+    400106: Tale_tip
+    400108: //RootNode
+    2100000: hover_0001_lambert2
+    4300000: sprinkhaan_body131314
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: sprinkhaan_body131314
+    2186277476908879412: ImportLogs
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
