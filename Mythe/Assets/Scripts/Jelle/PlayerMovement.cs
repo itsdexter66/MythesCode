@@ -70,10 +70,14 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    public void Move()
+    public void MoveRight()
     {
         transform.Translate(movementSpeed * Time.deltaTime, 0, 0);
-        Debug.Log("moving");
+    }
+
+    public void MoveLeft()
+    {
+        transform.Translate(-movementSpeed * Time.deltaTime, 0, 0);
     }
 
 

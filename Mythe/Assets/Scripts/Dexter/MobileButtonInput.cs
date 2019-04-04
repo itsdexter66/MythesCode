@@ -19,8 +19,7 @@ public class MobileButtonInput : MonoBehaviour, IPointerDownHandler, IPointerUpH
     {
         if (ispressed == true)
         {
-            playermovement.Move();
-            Debug.Log("button is being pressed");
+            playermovement.MoveRight();
         }
     }
 
