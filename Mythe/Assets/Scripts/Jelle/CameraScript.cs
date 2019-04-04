@@ -9,12 +9,12 @@ public class CameraScript : MonoBehaviour
     public bool followPlayer = true;
     readonly string playerName = "Player";
     readonly string targetName = "ChasingMonster";
-    float moveToPlayerSpeed = 5;
+    public float moveToPlayerSpeed = 5;
     // Start is called before the first frame update
     void Start()
     {
         targetT = GameObject.Find(targetName).GetComponent<Transform>();
-        //moveToPlayerSpeed = moveToPlayerSpeed;
+        playerT = GameObject.Find(playerName).GetComponent<Transform>();
     }
 
     // Update is called once per frame
@@ -24,7 +24,7 @@ public class CameraScript : MonoBehaviour
         {
             LockOnPlayer();
         }
-        else
+        if (!followPlayer)
         {
             LockOnTarget();
         }
