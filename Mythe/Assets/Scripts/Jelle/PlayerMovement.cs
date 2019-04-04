@@ -9,8 +9,8 @@ public class PlayerMovement : MonoBehaviour
     public bool automaticWalk = true;
     Rigidbody playerRB;
     Vector3 jumpForce = new Vector3(0,350,0);
-    public float movementSpeed = 6;
-    float standartMoveSpeed = 6;
+    public float movementSpeed = 3.05f;
+    float standartMoveSpeed = 3.05f;
     float impairedMoveSpeed = 2;
     public bool impairedMovement = false, pressing;
     float counter,wearOffTIme = 1.5f;
@@ -67,18 +67,24 @@ public class PlayerMovement : MonoBehaviour
             }
         }
     }
-//     /// <summary>
-//     /// Moves the right.
-//     /// </summary>
-//     public void moveRight()
-//     {
-public void Move()
-// >>>>>>> //BuildMobile
-{
+    //     /// <summary>
+    //     /// Moves the right.
+    //     /// </summary>
+    //     public void moveRight()
+    //     {
+    // public void Move()
+    // // >>>>>>> //BuildMobile
+    // {
+    public void MoveRight()
+    {
         transform.Translate(movementSpeed * Time.deltaTime, 0, 0);
-        Debug.Log("moving");
     }
-    
+
+    public void MoveLeft()
+    {
+        transform.Translate(-movementSpeed * Time.deltaTime, 0, 0);
+    }
+
 
 
 
@@ -116,4 +122,3 @@ public void Move()
         }
     }
 }
-

@@ -7,6 +7,9 @@ public class MobileButtonInput : MonoBehaviour, IPointerDownHandler, IPointerUpH
 {
 
     PlayerMovement playermovement;
+    [SerializeField] private bool rightButton,
+                                  jumpButton;
+                 
 
     bool ispressed = false;
 
@@ -16,13 +19,20 @@ public class MobileButtonInput : MonoBehaviour, IPointerDownHandler, IPointerUpH
     }
 
     void Update()
-    {
-        if (ispressed == true)
+    {    
+        if (rightButton == true)
         {
-            playermovement.Move();
-            Debug.Log("button is being pressed");
+            if (ispressed == true)
+            {
+                playermovement.MoveRight();
+            }
+        }
+        else if (ispressed == true)
+        {
+            playermovement.MoveLeft();
         }
     }
+    
 
     public void OnPointerDown(PointerEventData eventData)
     {
