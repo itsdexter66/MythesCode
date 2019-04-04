@@ -9,7 +9,7 @@ public class MobileButtonInput : MonoBehaviour, IPointerDownHandler, IPointerUpH
     PlayerMovement playermovement;
     [SerializeField] private bool rightButton,
                                   jumpButton;
-                 
+
 
     bool ispressed = false;
 

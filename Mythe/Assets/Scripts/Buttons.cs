@@ -59,4 +59,9 @@ public class Buttons : MonoBehaviour
         SceneManager.LoadScene(scene);
     }
 
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
 }

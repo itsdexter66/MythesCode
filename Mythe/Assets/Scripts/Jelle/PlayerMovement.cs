@@ -84,10 +84,6 @@ public class PlayerMovement : MonoBehaviour
     {
         transform.Translate(-movementSpeed * Time.deltaTime, 0, 0);
     }
-
-
-
-
     /// <summary>
     /// Checks if grounded.
     /// </summary>

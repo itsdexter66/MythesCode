@@ -94,12 +94,4 @@ public class MonsterBehavior : MonoBehaviour
     //    destroyables.Remove(ob);
     //    //anim.Play("Destroy");
     //}
-    void OnCollisionEnter(Collision ob)
-    {
-        if (ob.gameObject.tag == "Destroyables")
-        {
-            Destroy(ob.gameObject);
-            //anim.Play("Destroy");
-        }
-    }
 }
