@@ -15,13 +15,18 @@ public class PlayerMovement : MonoBehaviour
     public bool impairedMovement = false, pressing;
     float counter,wearOffTIme = 1.5f;
     private bool isGrounded;
+    private bool isJumping = false;
     public GameObject rightButton;
     public GameObject leftButton;
     public GameObject jumpButton;
+    public Animator playerAnim;
+    float jumpCounter;
+    float jumpTimeTreshold = 1.13f;
 
     void Start()
     {
         playerRB = GetComponent<Rigidbody>();
+        playerAnim = GetComponent<Animator>();
     }
 
     /// <summary>
@@ -41,16 +46,21 @@ public class PlayerMovement : MonoBehaviour
 
             if (Input.GetKey(KeyCode.D))
             {
-                transform.Translate(movementSpeed * Time.deltaTime, 0, 0);
+                MoveRight();
             }
-            if (Input.GetKey(KeyCode.A))
+            else if (Input.GetKey(KeyCode.A))
             {
-                transform.Translate(-movementSpeed * Time.deltaTime, 0, 0);
+                MoveLeft();
             }
+
         }
         else
         {
             transform.Translate(movementSpeed * Time.deltaTime, 0, 0);
+            if (!isJumping)
+            {
+                playerAnim.Play("run");
+            }
         }
 
 
@@ -66,6 +76,17 @@ public class PlayerMovement : MonoBehaviour
                 impairedMovement = false;
             }
         }
+
+        if (isJumping)
+        {
+            jumpCounter += Time.deltaTime;
+            if (jumpCounter >= jumpTimeTreshold)
+            {
+                isJumping = false;
+                jumpCounter = 0;
+                playerAnim.Play("idle");
+            }
+        }
     }
     //     /// <summary>
     //     /// Moves the right.
@@ -77,11 +98,21 @@ public class PlayerMovement : MonoBehaviour
     // {
     public void MoveRight()
     {
+        if (!isJumping)
+        {
+            playerAnim.Play("run");
+        }
+        transform.localScale = new Vector3(10, 10, 10);
         transform.Translate(movementSpeed * Time.deltaTime, 0, 0);
     }
 
     public void MoveLeft()
     {
+        if (!isJumping)
+        {
+            playerAnim.Play("run");
+        }
+        transform.localScale = new Vector3(-10, 10, 10);
         transform.Translate(-movementSpeed * Time.deltaTime, 0, 0);
     }
     /// <summary>
@@ -101,8 +132,10 @@ public class PlayerMovement : MonoBehaviour
     {
         if (CheckIfGrounded() == true)
         {
+            playerAnim.Play("jumpfall");
             playerRB.AddForce(jumpForce);
             isGrounded = true;
+            isJumping = true;
         }
     }
 

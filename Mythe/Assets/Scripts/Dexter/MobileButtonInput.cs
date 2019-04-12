@@ -45,6 +45,7 @@ public class MobileButtonInput : MonoBehaviour, IPointerDownHandler, IPointerUpH
         if (ispressed == false)
         {
             Debug.Log("button is not being pressed");
+            playermovement.playerAnim.Play("idle");
         }
     }
 }
