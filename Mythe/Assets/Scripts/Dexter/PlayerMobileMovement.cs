@@ -7,27 +7,19 @@ public class PlayerMobileMovement : MonoBehaviour
 
     //public Buttons jumpButton;
     bool CheckIfGrounded = true;
-    Rigidbody playerRB;
+    PlayerMovement playMove;
     Vector3 jumpForce = new Vector3(0, 700, 0);
 
     void Start()
     {
-        playerRB = GetComponent<Rigidbody>();
+        playMove = FindObjectOfType<PlayerMovement>();
     }
 
     void Update()
     {
-        //if (Input.GetButtonDown("jumpbutton"))
-        //{
-        //    Jump();
-        //}
-    }
-
-    public void Jump()
-    {
-        if (CheckIfGrounded == true)
+        if (Input.GetButtonDown("jumpbutton"))
         {
-            playerRB.AddForce(jumpForce);
+            playMove.Jump();
         }
     }
 }
