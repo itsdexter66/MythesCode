@@ -7,21 +7,20 @@ public class PlayerMovement : MonoBehaviour
 {
 
     public bool automaticWalk = true;
-    Rigidbody playerRB;
-    Vector3 jumpForce = new Vector3(0,350,0);
-    public float movementSpeed = 3.05f;
-    float standartMoveSpeed = 3.05f;
-    float impairedMoveSpeed = 2;
     public bool impairedMovement = false, pressing;
-    float counter,wearOffTIme = 1.5f;
-    private bool isGrounded;
-    private bool isJumping = false;
+    public float movementSpeed = 3.05f;
     public GameObject rightButton;
     public GameObject leftButton;
-    public GameObject jumpButton;
     public Animator playerAnim;
+    private bool isGrounded;
+    private bool isJumping = false;
+    readonly float standartMoveSpeed = 3.05f;
+    readonly float impairedMoveSpeed = 2;
+    float counter, wearOffTIme = 1.5f;
     float jumpCounter;
     float jumpTimeTreshold = 1.13f;
+    Rigidbody playerRB;
+    Vector3 jumpForce = new Vector3(0,350,0);
 
     void Start()
     {
@@ -43,15 +42,6 @@ public class PlayerMovement : MonoBehaviour
         {
             rightButton.SetActive(true);
             leftButton.SetActive(true);
-
-            if (Input.GetKey(KeyCode.D))
-            {
-                MoveRight();
-            }
-            else if (Input.GetKey(KeyCode.A))
-            {
-                MoveLeft();
-            }
 
         }
         else
@@ -88,32 +78,16 @@ public class PlayerMovement : MonoBehaviour
             }
         }
     }
-    //     /// <summary>
-    //     /// Moves the right.
-    //     /// </summary>
-    //     public void moveRight()
-    //     {
-    // public void Move()
-    // // >>>>>>> //BuildMobile
-    // {
-    public void MoveRight()
-    {
-        if (!isJumping)
-        {
-            playerAnim.Play("run");
-        }
-        transform.localScale = new Vector3(10, 10, 10);
-        transform.Translate(movementSpeed * Time.deltaTime, 0, 0);
-    }
 
-    public void MoveLeft()
+
+    public void MovePlayer(float faceDirection, float amount)
     {
         if (!isJumping)
         {
             playerAnim.Play("run");
         }
-        transform.localScale = new Vector3(-10, 10, 10);
-        transform.Translate(-movementSpeed * Time.deltaTime, 0, 0);
+        transform.localScale = new Vector3(faceDirection, 10, 10);
+        transform.Translate(amount * Time.deltaTime, 0, 0);
     }
     /// <summary>
     /// Checks if grounded.

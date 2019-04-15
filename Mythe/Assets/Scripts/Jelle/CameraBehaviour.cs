@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraScript : MonoBehaviour
+public class CameraBehaviour : MonoBehaviour
 {
     Transform playerT;
     Transform targetT;
@@ -22,23 +22,16 @@ public class CameraScript : MonoBehaviour
     {
         if (followPlayer)
         {
-            LockOnPlayer();
+            LockOnTarget(new Vector3(Mathf.Lerp(transform.position.x, playerT.position.x, 0.1f * moveToPlayerSpeed), Mathf.Lerp(transform.position.y, playerT.position.y, 0.1f * moveToPlayerSpeed) + 0.9f, -9));
         }
         if (!followPlayer)
         {
-            LockOnTarget();
+            LockOnTarget(new Vector3(targetT.position.x + 6, -4.5f, -9));
         }
     }
 
-    private void LockOnPlayer()
+    public void LockOnTarget(Vector3 target)
     {
-        transform.position = new Vector3(Mathf.Lerp(transform.position.x, playerT.position.x, 0.1f * moveToPlayerSpeed), Mathf.Lerp(transform.position.y, playerT.position.y, 0.1f * moveToPlayerSpeed) + 0.9f, -9);
-    }
-
-    public void LockOnTarget()
-    {
-       // float dist = Vector3.Distance(transform.position, targetT.position);
-        //transform.position = new Vector3(Mathf.Lerp(transform.position.x, targetT.position.x, 0.1f * moveToPlayerSpeed), Mathf.Lerp(transform.position.y, targetT.position.y, 0.1f * moveToPlayerSpeed) + 0.2f, -17);
        transform.position = new Vector3(targetT.position.x + 6, -4.5f, -9);
     }
 }

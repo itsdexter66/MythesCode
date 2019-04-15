@@ -5,16 +5,20 @@ using UnityEngine;
 public class MonsterBehavior : MonoBehaviour
 {
     [SerializeField]
-    float movementSpeed = 6;
     public LayerMask targetLayer;
-    float detectRange;
+    float destroyableDistance = 5;
     private Vector3 dir;
-    Transform target;
-    PlayerBehavior playerReference;
-    CameraScript camScriptRef;
+    float detectRange;
+    float movementSpeed = 3.05f;
     int leapCount;
     bool leapOnce = true;
-    public float destroyableDistance = 10;
+    bool isAttacking = false;
+    float attackTimeTreshold = 0.8f;
+    float attackTimer;
+    Transform target;
+    PlayerBehavior playerReference;
+    CameraBehaviour camScriptRef;
+    Animator anim;
     // Start is called before the first frame update
 
     List<GameObject> destroyables = new List<GameObject>();
@@ -23,7 +27,8 @@ public class MonsterBehavior : MonoBehaviour
       detectRange = transform.localScale.x + 3.5f;
       target = GameObject.FindObjectOfType<PlayerMovement>().GetComponent<Transform>();
         playerReference = GameObject.Find("Player").GetComponent<PlayerBehavior>();
-        camScriptRef = GameObject.Find("Main Camera").GetComponent<CameraScript>();
+        camScriptRef = GameObject.Find("Main Camera").GetComponent<CameraBehaviour>();
+        anim = GetComponentInChildren<Animator>();
         GameObject[] a = GameObject.FindGameObjectsWithTag("Destroyables");
         foreach (GameObject destroyable in a)
         {
@@ -51,6 +56,17 @@ public class MonsterBehavior : MonoBehaviour
         transform.Translate(movementSpeed * Time.deltaTime, 0, 0);
         DetectPlayer();
         CheckDestroyablesInRange();
+
+        if (isAttacking)
+        {
+            attackTimer += Time.deltaTime;
+            if (attackTimer > attackTimeTreshold)
+            {
+                isAttacking = false;
+                attackTimer = 0;
+                anim.Play("float");
+            }
+        }
     }
 
     
@@ -82,7 +98,6 @@ public class MonsterBehavior : MonoBehaviour
         for (int i = 0; i < destroyables.Count; i++)
         {
             float distanceX = destroyables[i].transform.position.x - transform.position.x;
-            Debug.Log(distanceX);
             if (distanceX < destroyableDistance)
             {
                 DestroyObject(destroyables[i]);
@@ -92,8 +107,9 @@ public class MonsterBehavior : MonoBehaviour
 
     void DestroyObject(GameObject ob)
     {
-        Destroy(ob, 0.2f);
+        Destroy(ob, attackTimeTreshold);
         destroyables.Remove(ob);
-        //anim.Play("Destroy");
+        anim.Play("destroy");
+        isAttacking = true;
     }
 }
