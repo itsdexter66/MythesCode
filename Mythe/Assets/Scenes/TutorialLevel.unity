@@ -899,6 +899,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rotsje (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4804857233770541722, guid: f79d04744b183c2498dabbe9aae58bbb,
+        type: 3}
+      propertyPath: m_TagString
+      value: Destroyables
+      objectReference: {fileID: 0}
     - target: {fileID: 418718781004562064, guid: f79d04744b183c2498dabbe9aae58bbb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9539,6 +9544,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rotsje (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4804857233770541722, guid: f79d04744b183c2498dabbe9aae58bbb,
+        type: 3}
+      propertyPath: m_TagString
+      value: Destroyables
+      objectReference: {fileID: 0}
     - target: {fileID: 418718781004562064, guid: f79d04744b183c2498dabbe9aae58bbb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -15483,7 +15493,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78162a5205ad82e47ab731e72ba968ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 3
   targetLayer:
     serializedVersion: 2
     m_Bits: 512

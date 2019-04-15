@@ -23,12 +23,12 @@ public class MobileButtonInput : MonoBehaviour, IPointerDownHandler, IPointerUpH
         {
             if (ispressed == true)
             {
-                playermovement.MoveRight();
+                playermovement.MovePlayer(10, playermovement.movementSpeed);
             }
         }
         else if (ispressed == true)
         {
-            playermovement.MoveLeft();
+            playermovement.MovePlayer(-10,-playermovement.movementSpeed);
         }
     }
     
