@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraCaveScript : MonoBehaviour
+public class CameraCave : MonoBehaviour
 {
     Transform targetPlayer;
     readonly string targetName = "Player";
