@@ -19,6 +19,6 @@ public class CameraCave : MonoBehaviour
     }
     public void LockOnPlayer() { 
         
-          transform.position = new Vector3(targetPlayer.position.x, targetPlayer.position.y + 3, -7);
+          transform.position = new Vector3(targetPlayer.position.x, targetPlayer.position.y + 2, -7);
     }
 }
