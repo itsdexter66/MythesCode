@@ -18,34 +18,34 @@ public class Pause : MonoBehaviour
 
     void Update()
     {
-
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            togglepause();
-
-        }
-
-        if (paused)
-        {
-
-            PauseUI.SetActive(true);
-            Time.timeScale = 0;
-        }
-
-        if (!paused)
-        {
-
-            PauseUI.SetActive(false);
-            Time.timeScale = 1;
-
-        }
-
+        PauseSwitch();
     }
 
-    public void togglepause()
+    public void PauseSwitch()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            TogglePause();
+        }
+    }
+
+    public void TogglePause()
     {
         paused = !paused;
 
+        switch (paused)
+        { 
+            case true:
+            PauseUI.SetActive(true);
+            Time.timeScale = 0;
+            break;
+            case false:
+            PauseUI.SetActive(false);
+            Time.timeScale = 1;
+            break;
+        }
     }
+
+    
 }
 
