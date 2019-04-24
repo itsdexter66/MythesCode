@@ -7,14 +7,14 @@ using UnityEngine.UI;
 public class Buttons : MonoBehaviour
 {
     public GameObject PauseUI;
-    private Pause pause;
+    private Pause pauseManager;
     public string scene;
  
 
 
     void Awake()
     {
-            
+        pauseManager = GameObject.FindObjectOfType<Pause>();
     }
 
     
@@ -26,6 +26,7 @@ public class Buttons : MonoBehaviour
     public void resume()
     {
         PauseUI.SetActive(false);
+        pauseManager.paused = false;
         Time.timeScale = 1;
     }
 

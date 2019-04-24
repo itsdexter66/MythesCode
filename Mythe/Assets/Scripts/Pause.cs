@@ -6,6 +6,8 @@ public class Pause : MonoBehaviour
 {
 
     public GameObject PauseUI;
+    [SerializeField]
+    private GameObject JumpButton;
 
     public bool paused = false;
 
@@ -13,7 +15,6 @@ public class Pause : MonoBehaviour
     {
 
         PauseUI.SetActive(false);
-
     }
 
     void Update()
@@ -40,12 +41,26 @@ public class Pause : MonoBehaviour
 
         }
 
+        InActivateButtons();
+
     }
 
     public void togglepause()
     {
         paused = !paused;
 
+    }
+
+    public void InActivateButtons()
+    {
+        if (paused == true)
+        {
+            JumpButton.SetActive(false);
+        }
+        else
+        {
+            JumpButton.SetActive(true);
+        }
     }
 }
 

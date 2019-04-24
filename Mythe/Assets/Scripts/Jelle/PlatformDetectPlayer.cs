@@ -13,6 +13,10 @@ public class PlatformDetectPlayer : MonoBehaviour
     [SerializeField]
     private int localScaleXDivider;
 
+    [SerializeField]
+    private float shakeDecayValue,
+                  shakeIntensityValue = 4;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +30,7 @@ public class PlatformDetectPlayer : MonoBehaviour
         if (DetectPlayer())
         {
             SetBackPlayer();
-            Debug.Log("Detected");
+            Camera.main.GetComponent<CameraShake>().Shake(shakeDecayValue, shakeIntensityValue);
         }
     }
 
