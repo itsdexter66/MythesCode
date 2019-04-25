@@ -199,7 +199,7 @@ GameObject:
   - component: {fileID: 95258249}
   - component: {fileID: 5252988982440171802}
   m_Layer: 0
-  m_Name: ChasingMonster 1
+  m_Name: 'ChasingMonster '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -406,7 +406,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1f433ec7189d3f842ad97f9273780eec, type: 2}
+  - {fileID: 2100000, guid: 7902a2eab73b17f4bbb95d2bd9825db9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
